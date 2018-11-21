@@ -1,5 +1,5 @@
 
-### 0. why do we want this?
+### 0. why do we need affinities?
 
 ### 1. deploy a front-end app without selectors / affinity
 ```
