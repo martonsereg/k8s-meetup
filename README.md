@@ -75,7 +75,7 @@ kubectl delete deploy very-important-app
 ```
 
 The weight field in preferredDuringSchedulingIgnoredDuringExecution is in the range 1-100. For each node that meets all of the scheduling requirements (resource request, RequiredDuringScheduling affinity expressions, etc.), the scheduler will compute a sum by iterating through the elements of this field and adding “weight” to the sum if the node matches the corresponding MatchExpressions. This score is then combined with the scores of other priority functions for the node. The node(s) with the highest total score are the most preferred.
-For more information on node affinity, see the design doc.
+https://github.com/eBay/Kubernetes/blob/master/docs/devel/scheduler_algorithm.md#ranking-the-nodes
 
 
 ### 6. node anti-affinity + MatchExpression operators
