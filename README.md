@@ -1,5 +1,7 @@
 
-### 0. why do we need affinities?
+### 0. What is a K8S affinity and why do we need it?
+
+With affinites you can constrain a pod to only be able to run on particular nodes or to prefer to run on particular nodes.
 
 ### 1. deploy a front-end app without selectors / affinity
 ```
