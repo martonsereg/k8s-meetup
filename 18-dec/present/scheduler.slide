@@ -1,0 +1,26 @@
+Writing custom schedulers
+18 Dec 2018
+Tags: k8s, scheduler
+
+Marton Sereg
+Banzai Cloud
+marton@banzaicloud.com
+
+http://github.com/martonsereg/random-scheduler
+
+* 
+
+.image why.jpg
+
+* The scheduling lifecycle
+
+1. pod's desired state is saved to etcd
+2. scheduler notices
+3. finds a node that fits
+4. writes new desired state to etcd
+
+* Implementing a scheduler
+
+.image brain.jpg
+
+* Demo
