@@ -1,0 +1,57 @@
+2019/04/05 11:35:36 install.go:59: could not read in Aspen Mesh username: unexpected newline
+2019/04/05 11:59:50 aws.go:51:   Requesting Aspen Mesh auth token OK
+2019/04/05 11:59:53 whoami.go:23:   Requesting Aspen Mesh cluster info OK
+2019/04/05 11:59:53 install.go:252: 
+Installing with these options:
+  1 - Kubernetes configuration file [/Users/marton/gke-m.conf]
+  2 - Kubernetes namespace for demo application [default]
+  3 - Download directory for Aspen Mesh tarball [/Users/marton/prj/k8s-meetup/22-feb-19/demo]
+Does this look correct?  [Y/n]: 
+2019/04/05 12:00:18 log.go:22: Checking Kubernetes cluster prerequisites...
+2019/04/05 12:00:18 prerequisites.go:38: Version returned from kubectl version: {
+  "clientVersion": {
+    "major": "1",
+    "minor": "13",
+    "gitVersion": "v1.13.1",
+    "gitCommit": "eec55b9ba98609a46fee712359c7b5b365bdd920",
+    "gitTreeState": "clean",
+    "buildDate": "2018-12-13T10:39:04Z",
+    "goVersion": "go1.11.2",
+    "compiler": "gc",
+    "platform": "darwin/amd64"
+  },
+  "serverVersion": {
+    "major": "1",
+    "minor": "12+",
+    "gitVersion": "v1.12.6-gke.7",
+    "gitCommit": "aeaa96020ec0614a8773799058c3b8d58c19b9ff",
+    "gitTreeState": "clean",
+    "buildDate": "2019-03-13T11:22:57Z",
+    "goVersion": "go1.10.8b4",
+    "compiler": "gc",
+    "platform": "linux/amd64"
+  }
+}
+
+2019/04/05 12:00:18 log.go:15:   Server Version: v1.12.6 OK
+2019/04/05 12:00:18 log.go:15:   Client Version: v1.13.1 OK
+2019/04/05 12:00:18 log.go:15:   Admission Control:  OK
+2019/04/05 12:00:18 log.go:22:   # of Ready Nodes: 0
+2019/04/05 12:00:18 log.go:22:   [1;33;40mWARNING:[0m 4+ nodes recommended for demo app. Application may be slow to initialize...
+
+2019/04/05 12:00:18 log.go:15:   Existing install of Istio or Aspen Mesh: None OK
+2019/04/05 12:01:24 log.go:15:   Downloading software OK
+2019/04/05 12:01:24 log.go:15:   Extracting Aspen Mesh to temp directory OK
+2019/04/05 12:01:32 log.go:15:   Installing Aspen Mesh Custom Resource Definitions  OK
+2019/04/05 12:02:03 log.go:15:   Installing Aspen Mesh in cluster OK
+2019/04/05 12:02:04 log.go:15:   Creating Aspen Mesh Kubernetes secrets OK
+2019/04/05 12:02:04 log.go:15:   Enable sidecar injection for 'default' namespace OK
+2019/04/05 12:02:05 log.go:15:   Verify sidecar injection enabled OK
+2019/04/05 12:02:05 log.go:32: Verifying Aspen Mesh deployment 
+2019/04/05 12:03:05 log.go:22: Creating Demo Application
+2019/04/05 12:03:06 log.go:15:   Deploying demo in the default namespace OK
+2019/04/05 12:03:06 log.go:32:   Verify demo is running 
+2019/04/05 12:07:47 log.go:15:   Adding gateway for demo app OK
+2019/04/05 12:07:47 log.go:12:   Verify gateway enabled FAILED
+2019/04/05 12:07:47 install.go:242: Gateway not enabled for demo in default namespace
+2019/04/05 12:07:47 log.go:15:   Cleaning Up OK

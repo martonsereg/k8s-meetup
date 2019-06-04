@@ -1,0 +1,83 @@
+Kubernetes Operators - The basics
+4 Jun 2019
+Tags: k8s, operators, crds, banzaicloud, kubebuilder
+
+Marton Sereg
+Banzai Cloud
+marton@banzaicloud.com
+
+https://github.com/martonsereg/k8s-meetup
+
+* Agenda
+
+.image agenda.png _ 900
+
+* Definition
+
+Kubernetes controllers that implement an API for a specific application, such as Etcd, Prometheus or Vault are often referred to as Operators.
+
+* What is an API resource?
+
+A Kubernetes Resource is a declarative API with a well defined Schema structure and endpoints.
+
+*Declarative* *API*
+
+A declarative API expresses a fixed state that the cluster must continually work towards.
+
+*Resource* *schema*
+
+Every Kubernetes resource has a Group, Version and Kind that uniquely identifies it.
+
+* How does it look like?
+
+.code kubectl-deployment.sh
+
+* What happens when I create a resource?
+
+.image webhooks.png _ 900
+
+* So what is a CRD?
+
+.code kubectl-crd.sh
+
+* And a CR?
+
+.code kubectl-cr.sh
+
+* What is a controller?
+
+Controllers implement APIs defined by Resources. A Kubernetes Controller is a routine running in a Kubernetes cluster that watches for create / update / delete events on Resources, and triggers a Reconcile function in response. Reconcile is a function that may be called at any time with the Namespace and Name of an object, and it will make the cluster state match the state declared in the object Spec.
+
+.image reconcile.png _ 900
+
+* ...for a specific application
+
+- Prometheus ([[https://github.com/coreos/prometheus-operator]])
+- Etcd ([[https://github.com/coreos/etcd-operator]])
+- Vault ([[https://github.com/banzaicloud/bank-vaults]])
+- Istio ([[https://github.com/banzaicloud/istio-operator]])
+- Kafka ([[https://github.com/banzaicloud/kafka-operator]])
+- Fluentd / Fluentbit ([[https://github.com/banzaicloud/logging-operator]])
+- etc... (see [[https://operatorhub.io]])
+
+* How do I create a new resource or a controller?
+
+1. Write it from scratch
+2. Use Kubebuilder
+3. Use Operator SDK
+
+* Summary
+
+An Operator is a method of packaging, deploying and managing a Kubernetes application.
+
+Operational knowledge of the application is baked in - it helps with automation.
+
+Smarter and more tailored than generic tools - but needs coding.
+
+Uses Kubernetes constructs such as CRDs, controllers and the reconciliation loop.
+
+
+
+
+
+
