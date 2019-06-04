@@ -36,19 +36,19 @@ Every Kubernetes resource has a Group, Version and Kind that uniquely identifies
 
 .image webhooks.png _ 900
 
-* So what is a CRD?
+* What is a controller?
+
+Controllers implement APIs defined by Resources. A Kubernetes Controller is a routine running in a Kubernetes cluster that *watches* for create / update / delete events on Resources, and triggers a *reconcile* function in response. Reconcile is a function that may be called at any time with the Namespace and Name of an object, and it will make the cluster state match the state declared in the object Spec.
+
+.image reconcile.png _ 900
+
+* Okay, but what does it have to do with operators?
 
 .code kubectl-crd.sh
 
-* And a CR?
+* Custom resources are the new answer to the Ultimate Question of Life, the Universe, and Everything
 
 .code kubectl-cr.sh
-
-* What is a controller?
-
-Controllers implement APIs defined by Resources. A Kubernetes Controller is a routine running in a Kubernetes cluster that watches for create / update / delete events on Resources, and triggers a Reconcile function in response. Reconcile is a function that may be called at any time with the Namespace and Name of an object, and it will make the cluster state match the state declared in the object Spec.
-
-.image reconcile.png _ 900
 
 * ...for a specific application
 
